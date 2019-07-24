@@ -60,13 +60,15 @@ struct ListNode* rotateRight(struct ListNode* head, int k)
 	p->next = head->next;
 	q = head;
 	p = head->next;
-	
+
+	/* 寻找数据节点以及前驱节点 */
 	while (index < count-k) {
 		p = p->next;
 		q = q->next;
 		index++;
 	}
 
+	/* 断链 */
 	head->next = p;
     q->next = NULL;
 
